@@ -1,6 +1,6 @@
 # This dockerfile builds the API and runs it on a minimal container with the Datastore adaptor
 
-FROM rust:latest as builder
+FROM docker.io/rust:latest as builder
 
 # Install CA Certs for Hyper
 RUN apt-get install -y --no-install-recommends ca-certificates
