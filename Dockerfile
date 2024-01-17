@@ -9,7 +9,7 @@ RUN update-ca-certificates
 WORKDIR /usr/src/app
 COPY . .
 # Will build and cache the binary and dependent crates in release mode
-RUN --mount=type=cache,target=/usr/local/cargo,from=rust:latest,source=/usr/local/cargo \
+RUN --mount=type=cache,target=/usr/local/cargo,from=docker.io/rust:latest,source=/usr/local/cargo \
     --mount=type=cache,target=target \
     cargo build --release --features datastore-adaptor && mv ./target/release/crabfit-api ./api
 
